@@ -223,7 +223,7 @@ uint32_t MINIMUM_RPM_SPEED_CONTROL = 700;
 
  //assign speed control PID values values are x10000
  fastPID speedPid = {      //commutation speed loop time
- 		.Kp = 10,
+ 		.Kp = 12,
  		.Ki = 0,
  		.Kd = 100,
  		.integral_limit = 10000,
@@ -275,11 +275,11 @@ char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
 uint16_t motor_kv = 4140;
 char motor_poles = 2;
 uint16_t CURRENT_LIMIT = 202;
-uint8_t sine_mode_power = 5;
+uint8_t sine_mode_power = 10;
 char drag_brake_strength = 10;		// Drag Brake Power when brake on stop is enabled
 uint8_t driving_brake_strength = 10;
 uint8_t dead_time_override = DEAD_TIME;
-char sine_mode_changeover_thottle_level = 5;	// Sine Startup Range
+char sine_mode_changeover_thottle_level = 25;	// Sine Startup Range
 uint16_t stall_protect_target_interval = TARGET_STALL_PROTECTION_INTERVAL;
 char USE_HALL_SENSOR = 0;
 uint16_t enter_sine_angle = 180;
