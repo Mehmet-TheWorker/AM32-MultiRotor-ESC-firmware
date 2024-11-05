@@ -218,12 +218,12 @@
 //===========================================================================
 
 uint8_t drive_by_rpm = 0;
-uint32_t MAXIMUM_RPM_SPEED_CONTROL = 5000;
+uint32_t MAXIMUM_RPM_SPEED_CONTROL = 50000;
 uint32_t MINIMUM_RPM_SPEED_CONTROL = 700;
 
  //assign speed control PID values values are x10000
  fastPID speedPid = {      //commutation speed loop time
- 		.Kp = 12,
+ 		.Kp = 20,
  		.Ki = 0,
  		.Kd = 100,
  		.integral_limit = 10000,
@@ -231,7 +231,7 @@ uint32_t MINIMUM_RPM_SPEED_CONTROL = 700;
  };
 
  fastPID currentPid = {   // 1khz loop time
- 		.Kp = 900,
+ 		.Kp = 1100,
  		.Ki = 0,
  		.Kd = 1000,
  		.integral_limit = 20000,
@@ -274,7 +274,7 @@ uint8_t TEMPERATURE_LIMIT = 255;  // degrees 255 to disable
 char advance_level = 2;			// 7.5 degree increments 0 , 7.5, 15, 22.5)
 uint16_t motor_kv = 4140;
 char motor_poles = 2;
-uint16_t CURRENT_LIMIT = 202;
+uint16_t CURRENT_LIMIT = 302;
 uint8_t sine_mode_power = 10;
 char drag_brake_strength = 10;		// Drag Brake Power when brake on stop is enabled
 uint8_t driving_brake_strength = 10;
@@ -354,7 +354,7 @@ int16_t actual_current = 0;
 
 char lowkv = 0;
 
-uint16_t min_startup_duty = 180;
+uint16_t min_startup_duty = 200;
 uint16_t sin_mode_min_s_d = 120;
 char bemf_timeout = 10;
 
@@ -374,7 +374,7 @@ typedef enum
   GPIO_PIN_SET
 }GPIO_PinState;
 
-uint16_t startup_max_duty_cycle = 400 + DEAD_TIME;
+uint16_t startup_max_duty_cycle = 300 + DEAD_TIME;
 uint16_t minimum_duty_cycle = DEAD_TIME+50;
 uint16_t stall_protect_minimum_duty = DEAD_TIME;
 char desync_check = 0;
