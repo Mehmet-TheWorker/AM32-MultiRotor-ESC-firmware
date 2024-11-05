@@ -218,14 +218,15 @@
 //===========================================================================
 
 uint8_t drive_by_rpm = 0;
-uint32_t MAXIMUM_RPM_SPEED_CONTROL = 5000;
+//uint32_t MAXIMUM_RPM_SPEED_CONTROL = 5000;
+uint32_t MAXIMUM_RPM_SPEED_CONTROL = 140000;
 uint32_t MINIMUM_RPM_SPEED_CONTROL = 800;
 
  //assign speed control PID values values are x10000
  fastPID speedPid = {      //commutation speed loop time
- 		.Kp = 10,
+ 		.Kp = 12,
  		.Ki = 0,
- 		.Kd = 100,
+ 		.Kd = 110,
  		.integral_limit = 10000,
  		.output_limit = 50000
  };
@@ -285,8 +286,8 @@ char USE_HALL_SENSOR = 0;
 uint16_t enter_sine_angle = 180;
 char do_once_sinemode= 0;
 //============================= Servo Settings ==============================
-uint16_t servo_low_threshold = 800;	// anything below this point considered 0
-uint16_t servo_high_threshold = 1900;	// anything above this point considered 2000 (max)
+uint16_t servo_low_threshold = 950;	// anything below this point considered 0
+uint16_t servo_high_threshold = 1950;	// anything above this point considered 2000 (max)
 uint16_t servo_neutral = 1500;
 uint8_t servo_dead_band = 100;
 
@@ -354,7 +355,7 @@ int16_t actual_current = 0;
 
 char lowkv = 0;
 
-uint16_t min_startup_duty = 170;
+uint16_t min_startup_duty = 200;
 uint16_t sin_mode_min_s_d = 120;
 char bemf_timeout = 10;
 
@@ -374,7 +375,7 @@ typedef enum
   GPIO_PIN_SET
 }GPIO_PinState;
 
-uint16_t startup_max_duty_cycle = 400 + DEAD_TIME;
+uint16_t startup_max_duty_cycle = 500 + DEAD_TIME;
 uint16_t minimum_duty_cycle = DEAD_TIME;
 uint16_t stall_protect_minimum_duty = DEAD_TIME;
 char desync_check = 0;
