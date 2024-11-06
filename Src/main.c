@@ -218,7 +218,7 @@
 //===========================================================================
 
 uint8_t drive_by_rpm = 0;
-uint32_t MAXIMUM_RPM_SPEED_CONTROL = 50000;
+uint32_t MAXIMUM_RPM_SPEED_CONTROL = 15000;
 uint32_t MINIMUM_RPM_SPEED_CONTROL = 700;
 
  //assign speed control PID values values are x10000
@@ -279,14 +279,14 @@ uint8_t sine_mode_power = 10;
 char drag_brake_strength = 10;		// Drag Brake Power when brake on stop is enabled
 uint8_t driving_brake_strength = 10;
 uint8_t dead_time_override = DEAD_TIME;
-char sine_mode_changeover_thottle_level = 25;	// Sine Startup Range
+char sine_mode_changeover_thottle_level = 15;	// Sine Startup Range
 uint16_t stall_protect_target_interval = TARGET_STALL_PROTECTION_INTERVAL;
 char USE_HALL_SENSOR = 0;
 uint16_t enter_sine_angle = 180;
 char do_once_sinemode= 0;
 //============================= Servo Settings ==============================
-uint16_t servo_low_threshold = 700;	// anything below this point considered 0
-uint16_t servo_high_threshold = 1900;	// anything above this point considered 2000 (max)
+uint16_t servo_low_threshold = 950;	// anything below this point considered 0
+uint16_t servo_high_threshold = 1950;	// anything above this point considered 2000 (max)
 uint16_t servo_neutral = 1500;
 uint8_t servo_dead_band = 100;
 
@@ -321,7 +321,7 @@ uint16_t target_e_com_time = 0;
 int16_t Speed_pid_output;
 char use_speed_control_loop = 0;
 float input_override = 0;
-int16_t	use_current_limit_adjust = 2000;
+int16_t	use_current_limit_adjust = 2500;
 char use_current_limit = 0;
 float stall_protection_adjust = 0;
 
@@ -354,11 +354,11 @@ int16_t actual_current = 0;
 
 char lowkv = 0;
 
-uint16_t min_startup_duty = 200;
+uint16_t min_startup_duty = 250;
 uint16_t sin_mode_min_s_d = 120;
 char bemf_timeout = 10;
 
-char startup_boost = 60;
+char startup_boost = 80;
 char reversing_dead_band = 1;
 
 uint16_t low_pin_count = 0;
@@ -374,7 +374,7 @@ typedef enum
   GPIO_PIN_SET
 }GPIO_PinState;
 
-uint16_t startup_max_duty_cycle = 300 + DEAD_TIME;
+uint16_t startup_max_duty_cycle = 350 + DEAD_TIME;
 uint16_t minimum_duty_cycle = DEAD_TIME+50;
 uint16_t stall_protect_minimum_duty = DEAD_TIME;
 char desync_check = 0;
@@ -385,7 +385,7 @@ uint16_t TIMER1_MAX_ARR = TIM1_AUTORELOAD;      // maximum auto reset register v
 uint16_t duty_cycle_maximum = TIM1_AUTORELOAD;     //restricted by temperature or low rpm throttle protect
 uint16_t low_rpm_level  = 20;        // thousand erpm used to set range for throttle resrictions
 uint16_t high_rpm_level = 70;      //
-uint16_t throttle_max_at_low_rpm  = 500;
+uint16_t throttle_max_at_low_rpm  = 600;
 uint16_t throttle_max_at_high_rpm = TIM1_AUTORELOAD;
 
 uint16_t commutation_intervals[6] = {0};
